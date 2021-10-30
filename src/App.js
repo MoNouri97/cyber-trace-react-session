@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AddTransaction from './components/AddTransaction';
+import Balance from './components/Balance';
+import Header from './components/Header';
+import IncomeExpenses from './components/IncomeExpense';
 
-function App() {
+const App = () => {
+  const [balance, setBalance] = useState(10000);
+  const [transactions, setTransactions] = useState([
+    { amount: 1000, name: 'salary', id: 1 },
+    { amount: -300, name: 'rent', id: 2 },
+  ]);
+  const addTransaction = newTransaction => {
+    setTransactions(oldValue => {
+      return [...oldValue, newTransaction];
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className='container'>
+        <Balance data={balance} />
+        <IncomeExpenses data={transactions} />
+        <AddTransaction onAdd={addTransaction} />
+      </div>
+    </>
   );
-}
+  // return (
+  //   <>
+  //     <Header />
+  //     <div className='container'>
+  //       <Balance balance={balance} />
+  //       <IncomeExpenses data={transactions} />
+  //       <AddTransaction onAdd={addTransaction} />
+  //       <History data={transactions} onDelete={deleteTransaction} />
+  //     </div>
+  //   </>
+  // );
+};
 
 export default App;
