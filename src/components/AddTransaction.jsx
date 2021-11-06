@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AddTransaction = ({ onAdd }) => {
   const [text, setText] = useState('');
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState('');
 
   const onSubmit = e => {
     e.preventDefault();
+    // api call -> id
     onAdd({
       name: text,
       amount: +amount,
       id: Math.random() * 1000,
     });
+
+    setAmount('');
+    setText('');
   };
 
   return (
