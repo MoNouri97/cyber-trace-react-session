@@ -19,7 +19,7 @@ const AddTransaction = ({ onAdd }) => {
 
   return (
     <>
-      <h3>Add new transaction Hacked by cyber trace</h3>
+      <h3>Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className='form-control'>
           <label htmlFor='text'>Text</label>

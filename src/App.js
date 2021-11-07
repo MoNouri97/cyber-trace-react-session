@@ -53,17 +53,6 @@ const App = () => {
       </div>
     </>
   );
-  // return (
-  //   <>
-  //     <Header />
-  //     <div className='container'>
-  //       <Balance balance={balance} />
-  //       <IncomeExpenses data={transactions} />
-  //       <AddTransaction onAdd={addTransaction} />
-  //       <History data={transactions} onDelete={deleteTransaction} />
-  //     </div>
-  //   </>
-  // );
 };
 
 export default App;
