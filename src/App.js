@@ -9,7 +9,7 @@ const storage_key = 'TRANSACTIONS';
 
 const initial = () => {
   const savedString = localStorage.getItem(storage_key);
-  return JSON.parse(savedString);
+  return savedString ? JSON.parse(savedString) : [];
 };
 
 const App = () => {
