@@ -3,10 +3,9 @@ import React from 'react';
 const Header = () => {
   return (
     <>
-      <h2>Cyber-Trace</h2>
+      <h2>Budget Tracker</h2>
       <p>
-        A simple react app developed during a session for the club Cyber-Trace
-        💟
+        A simple app developed as part of the React.js workshop @ Cyber-Trace 💟
       </p>
     </>
   );

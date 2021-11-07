@@ -9,6 +9,7 @@ const storage_key = 'TRANSACTIONS';
 
 const initial = () => {
   const savedString = localStorage.getItem(storage_key);
+  // Check if savedString is not null
   return savedString ? JSON.parse(savedString) : [];
 };
 
